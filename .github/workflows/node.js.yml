@@ -25,7 +25,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm ci
     - run: npm install --global yarn
+    - run: yarn install --frozen-lockfile
     - run: yarn rw build && yarn rw db up --no-db-client --auto-approve && yarn rw dataMigrate up
-    - run: npm test
+    - run: yarn test
