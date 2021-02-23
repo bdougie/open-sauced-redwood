@@ -40,4 +40,4 @@ jobs:
     - run: npm install --global yarn
     - run: yarn install --frozen-lockfile
     - run: yarn rw build && yarn rw db up --no-db-client --auto-approve && yarn rw dataMigrate up
-    - run: yarn test
+    - run: yarn rw test
