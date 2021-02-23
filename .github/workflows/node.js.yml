@@ -41,3 +41,5 @@ jobs:
     - run: yarn install --frozen-lockfile
     - run: yarn rw build && yarn rw db up --no-db-client --auto-approve && yarn rw dataMigrate up
     - run: yarn rw test
+      env: 
+        DATABASE_URL: secrets.DATABASE_URL
